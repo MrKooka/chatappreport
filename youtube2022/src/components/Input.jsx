@@ -32,7 +32,7 @@ const Input = () => {
 
       // Добавляем новое время окончания события
       const endEventTime = date; // Или другое время, которое вы хотите добавить
-      const updatedLastEvent = { ...lastEvent, end_event_time: endEventTime };
+      const updatedLastEvent = { ...lastEvent, end_event_time: endEventTime};
 
       // Заменяем последнее событие в массиве
       updatedEvents[lastEventIndex] = updatedLastEvent;
@@ -58,7 +58,7 @@ const Input = () => {
       id: uuid(),             // уникальный идентификатор для нового события
       text: event.event,        // текст события
       senderId:  currentUser.uid, // ID текущего пользователя
-      start_date: date,             // текущее время в формате timestamp
+      start_event_time: date,             // текущее время в формате timestamp
       type: event.type || 'Unknown', // тип события, если он не определён, используем 'Unknown'
 
     };
@@ -99,7 +99,7 @@ const Input = () => {
     const handleChange = (e) => {
       handleSearch(e.target.value);
       setInputText(e.target.value)
-
+     
       
     };
 
@@ -136,13 +136,15 @@ const Input = () => {
         onChange={handleChange}
         value={inputText}
       />
-       <div className="search-results">
+    {inputText && (
+      <div className="search-results">
         {searchResults.map((result, index) => (
           <div onClick={() => {handleResultClick(result)}} key={index} className="search-result">
             {result.event} : {result.type}
           </div>
         ))}
       </div>
+    )}
      
       <div className="send">
         <button onClick={handleSend}>Send</button>

@@ -7,7 +7,7 @@ Recording_time_events = [
 {
 	"action":{
 			"Recording_time_events":[
-				"recording time"
+				"start recording (recording time)"
 			],
 			"Organisation_downtime_events":[
 				"Sensors cleaning",
@@ -39,7 +39,8 @@ Recording_time_events = [
 				"Standby as routes are done",
 				"Standby after transfer",
 				"Not enough time to start new route",
-				"Driving to starting point/calibration zone"
+				"Driving to starting point/calibration zone",
+				"Spyglass error"
 				],
 			"Stystem_downtime_events":[
 				"System Power Cycle",

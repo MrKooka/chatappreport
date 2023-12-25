@@ -5,6 +5,8 @@ import "./style.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Report from "./pages/Report";
+import ReportHeadData from "./pages/ReportHeadData";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -31,6 +33,10 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="report" element={<Report />} />
+          <Route path="report_head_data" element={<ReportHeadData />} />
+
+
         </Route>
       </Routes>
     </BrowserRouter>

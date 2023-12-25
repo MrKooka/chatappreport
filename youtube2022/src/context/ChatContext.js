@@ -4,7 +4,7 @@ import { db } from "../firebase"; // Убедитесь, что путь к Fire
 
 export const ChatContext = createContext();
 export const ChatProvider = ({ children }) => {
-  const [report, setReport] = useState({}); // Изменено на объект
+  const [report, setReport] = useState({ events: [] });
 
   const getReport = useCallback(() => {
     console.log("Внутри getReport ");
