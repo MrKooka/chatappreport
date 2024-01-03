@@ -14,6 +14,7 @@
   }
 }
 
+
 .formContainer {
   background-color: #a7bcff;
   height: 100vh;
@@ -100,7 +101,8 @@
     width: 65%;
     height: 80%;
     display: flex;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow: auto;
     @include tablet {
      width: 90%;
     }
@@ -361,6 +363,7 @@
       
     }
   }
+  
 }
 
 

@@ -21,7 +21,6 @@ db = firestore.client()
 doc_ref = db.collection("repots").document("24-12-2023")
 
 
-
 # realtime database 
 # ref = db.reference('actions_types')
 # snapshot = ref.get()
@@ -39,8 +38,11 @@ doc_ref = db.collection("repots").document("24-12-2023")
 
 
 if __name__ == "__main__":
-    doc = doc_ref.get()
-    if doc.exists:
-        print(f"Document data: {doc.to_dict()}")
-    else:
-        print("No such document!")
+    # doc = doc_ref.get()
+    # if doc.exists:
+    #     print(f"Document data: {doc.to_dict()}")
+    # else:
+    #     print("No such document!")
+    with open("testdata.json", 'r') as f:
+        data = json.load(f)
+        db.collection("repots").document("03-01-2024").set(data)

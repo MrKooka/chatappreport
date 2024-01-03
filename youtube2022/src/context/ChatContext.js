@@ -8,7 +8,7 @@ export const ChatProvider = ({ children }) => {
 
   const getReport = useCallback(() => {
     console.log("Внутри getReport ");
-    const reportDocRef = doc(db, "repots", "24-12-2023");
+    const reportDocRef = doc(db, "repots", "03-01-2024");
     return onSnapshot(reportDocRef, (doc) => {
       if (doc.exists()) {
         setReport(doc.data()); // Присваиваем весь объект doc.data() в report

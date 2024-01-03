@@ -12,17 +12,11 @@
     "current_location": "Sunnyvale CA",
     "o_powercycles_duration": 4,
     "delimiter": "______________________",
-    "events": [{
-        "text": "ZAM insert",
-        "senderId": "fimX3QPC2WZsfrgLN7qWaZsCyI92",
-        "date": 1703456525,
-        "type": "Standby downtime_events",
-        "id": "af0e043c-90ce-430b-840b-1014ef3a9ffe"
-    }],
-    "date": 1703456525,
-    "Recording_time": 2.06,
-    "o_pre_drive_test_duration": 10,
-    "o_powercycles": 1,
+    "events": [{}],
+    "date": 1704319173,
+    "Recording_time": 0,
+    "o_pre_drive_test_duration": 0,
+    "o_powercycles": 0,
     "working_hours": "06:00 - 14:30",
     "zam_sets": [{
         "number": 106,
@@ -34,5 +28,7 @@
         "status": "empty"
     }],
     "standby_downtime": 0,
-    "route_id": "R99003"
+    "route_id": "R99003",
+    "closed":false,
+    "userOwner":"fimX3QPC2WZsfrgLN7qWaZsCyI92"
 }

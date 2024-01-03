@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 import {formatDate,hm,getDelta} from "../utils/timer"
+import Button from '@mui/material/Button';
 
 const Report = () => {
 const { currentUser } = useContext(AuthContext);
@@ -35,8 +36,7 @@ const { report, getReport } = useContext(ChatContext);
         <div className="chat">
             <div className="chatInfo">
                 <div className="chatIcons">
-                    
-                    <Link to="/"><button className="/">Назад</button></Link>
+                    <Link to="/"><Button variant="contained">Back</Button></Link>
                 </div>
             </div> 
             <p>{date} Shift {report.shift}</p>
@@ -49,6 +49,7 @@ const { report, getReport } = useContext(ChatContext);
             ))}
 
         </div>
+        
       </div>
     </div>
     

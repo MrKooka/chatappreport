@@ -3,12 +3,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../context/ChatContext";
 import { db } from "../firebase";
 import Message from "./Message";
+import {formatDate} from "../utils/timer"
+
 
 const Messages = () => {
   const { report, getReport } = useContext(ChatContext);
+  const dateForRender = formatDate(report.date)
   useEffect(() => {
-    if (!report.events) {
-      // Если events еще не получены, вызываем getReport
+    console.log("report.events____",report.events);
+    if (Array.isArray(report.events) && report.events.length === 0) {
       getReport();
     }
   }, [report, getReport]);
@@ -29,7 +32,7 @@ const Messages = () => {
 
   return (
     <div className="messages">
-      {/* Проверяем, что report.events существует и является массивом перед отображением */}
+      <h2 style={{ marginBottom: '20px' }} > {dateForRender} Shift {report.shift} Report events </h2>
       {report.events && report.events.map((event) => (
         <Message key={event.id} message={event} />
       ))}

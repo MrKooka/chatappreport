@@ -41,7 +41,7 @@ const Input = () => {
 
       try {
         // Получаем ссылку на документ report в Firestore
-        const reportDocRef = doc(db, "repots", "24-12-2023");
+        const reportDocRef = doc(db, "repots", "03-01-2024");
 
         // Обновляем документ в Firestore, заменяя массив events
         await updateDoc(reportDocRef, {
@@ -53,7 +53,6 @@ const Input = () => {
         console.error("Ошибка при обновлении события в report:", error);
       }
     }
-
     const newEvent = {
       id: uuid(),             // уникальный идентификатор для нового события
       text: event.event,        // текст события
@@ -65,7 +64,7 @@ const Input = () => {
   
     try {
       // Получаем ссылку на документ report в Firestore
-      const reportDocRef = doc(db, "repots", "24-12-2023");
+      const reportDocRef = doc(db, "repots", "03-01-2024");
   
       // Обновляем документ, добавляя новое событие в массив events
       await updateDoc(reportDocRef, {
