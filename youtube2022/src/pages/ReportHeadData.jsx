@@ -31,7 +31,7 @@ const ReportHeadData = () => {
       setZamSets(zamSets.filter((_, i) => i !== index));
     };
     console.log("zamSets",zamSets);
- 
+      
     return (
         <div className='home'>
         <div className="container">
@@ -40,7 +40,6 @@ const ReportHeadData = () => {
                   <div className="chatIcons">
                       <Link to="/"><Button variant="contained">Back</Button></Link>
                       <Button variant="contained">Save Head Rport </Button>
-
                   </div>  
               </div> 
               <FormControl style={{ margin: '20px' }} >
