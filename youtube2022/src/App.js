@@ -3,6 +3,8 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+
 import "./style.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
@@ -11,10 +13,6 @@ import Report from "./pages/Report";
 import ReportHeadData from "./pages/ReportHeadData";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import MiniDrawer  from "./components/Drawer";
-import Layout from "./components/Layout";
 
 
 function App() {
@@ -25,20 +23,20 @@ function App() {
       return <Navigate to="/login" />;
     }
 
-    return children
+    return children;
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<ProtectedRoute><Home/></ProtectedRoute>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/report" element={<Report />} />
-            <Route path="/report_head_data" element={<ReportHeadData />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/report/:reportId" element={<Report />} />
+          <Route path="/report_head_data" element={<ReportHeadData />} />
+          <Route path="/profile" element={<Profile />} />
+
         </Routes>
       </BrowserRouter>
     </LocalizationProvider>

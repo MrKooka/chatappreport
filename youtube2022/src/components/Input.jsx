@@ -11,6 +11,9 @@ import { db, database } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDatabase, ref, onValue, } from "firebase/database";
 
+
+
+
 const Input = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [databaseEvents, setDatabaseEvents] = useState({});
@@ -41,7 +44,7 @@ const Input = () => {
 
       try {
         // Получаем ссылку на документ report в Firestore
-        const reportDocRef = doc(db, "repots", "03-01-2024");
+        const reportDocRef = doc(db, "repots", "0faa56e7-2613-41f6-a9de-8d4ee1b424fd");
 
         // Обновляем документ в Firestore, заменяя массив events
         await updateDoc(reportDocRef, {
@@ -64,7 +67,7 @@ const Input = () => {
   
     try {
       // Получаем ссылку на документ report в Firestore
-      const reportDocRef = doc(db, "repots", "03-01-2024");
+      const reportDocRef = doc(db, "repots", "0faa56e7-2613-41f6-a9de-8d4ee1b424fd");
   
       // Обновляем документ, добавляя новое событие в массив events
       await updateDoc(reportDocRef, {
@@ -139,12 +142,12 @@ const Input = () => {
       <div className="search-results">
         {searchResults.map((result, index) => (
           <div onClick={() => {handleResultClick(result)}} key={index} className="search-result">
-            {result.event} : {result.type}
+            {result.event}
           </div>
         ))}
       </div>
     )}
-     
+
       <div className="send">
         <button onClick={handleSend}>Send</button>
       </div>
