@@ -14,21 +14,5 @@ db = firestore.client()
 
 users_ref:DocumentReference = db.collection("users")
 docs:typing.Generator[DocumentSnapshot, None, None] = users_ref.stream()
-callback_done = threading.Event()
 
-# Create a callback on_snapshot function to capture changes
-def on_snapshot(doc_snapshot:typing.Generator[DocumentSnapshot, None, None], changes, read_time):
-    messages = doc_snapshot
-    callback_done.set()
-
-# doc_ref = db.collection("chats").document("qkqgaqzroOaSVEljehAceEniKpp1fimX3QPC2WZsfrgLN7qWaZsCyI92")
-# Watch the document
-# doc_watch = doc_ref.on_snapshot(on_snapshot)
-
-# try:
-#     while True:
-#         time.sleep(1)  # Ждем 1 секунду перед следующей итерацией
-# except KeyboardInterrupt:
-#     print("Программа остановлена пользователем")
-#     doc_watch.unsubscribe()
 

@@ -7,7 +7,7 @@ export const ChatProvider = ({ children }) => {
   const [report, setReport] = useState({ events: [] });
   const getReport = useCallback(() => {
     console.log("Внутри getReport ");
-    const reportDocRef = doc(db, "repots", "0faa56e7-2613-41f6-a9de-8d4ee1b424fd");
+    const reportDocRef = doc(db, "repots", "fb5ac7ea-1c76-48ab-87d7-c9ce5efe721f");
     return onSnapshot(reportDocRef, (doc) => {
       if (doc.exists()) {
         setReport(doc.data()); // Присваиваем весь объект doc.data() в report
